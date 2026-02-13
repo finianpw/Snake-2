@@ -1,0 +1,127 @@
+:root {
+  color-scheme: dark;
+  --panel: #1f2733;
+  --accent: #76e5ff;
+  --text: #e8f4ff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #223046, #0a0f18 70%);
+  color: var(--text);
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+#menu {
+  background: linear-gradient(160deg, #1f2733, #111720);
+  padding: 18px;
+  border-right: 2px solid #2b394f;
+  overflow-y: auto;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin-top: 0;
+  opacity: 0.8;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+button,
+select,
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 9px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+button {
+  background: #243349;
+  color: #d8ecff;
+  cursor: pointer;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+button:hover:enabled {
+  transform: translateY(-1px);
+  background: #2d4261;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.level-btn.selected {
+  outline: 2px solid #89f5ff;
+}
+
+#gamePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#hud {
+  width: 900px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+#gameCanvas {
+  border: 2px solid #3f5f82;
+  border-radius: 12px;
+  max-width: 95vw;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  filter: brightness(var(--brightness, 1));
+}
+
+.help {
+  opacity: 0.8;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 1200px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+
+  #menu {
+    border-right: none;
+    border-bottom: 2px solid #2b394f;
+  }
+}

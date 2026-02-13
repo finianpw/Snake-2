@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake: 10 Światów</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="menu">
+      <h1>🐍 Snake: 10 Światów</h1>
+      <p class="subtitle">Zbieraj 10 jabłek, odblokowuj poziomy i uważaj na przeszkody.</p>
+
+      <section>
+        <h2>Wybór poziomu</h2>
+        <div id="levelButtons" class="level-grid"></div>
+      </section>
+
+      <section>
+        <h2>Ustawienia</h2>
+        <label for="brightness">Jasność</label>
+        <input id="brightness" type="range" min="60" max="140" value="100" />
+        <span id="brightnessValue">100%</span>
+
+        <label for="snakeSkin">Rodzaj węża</label>
+        <select id="snakeSkin">
+          <option value="emerald">Szmaragdowy</option>
+          <option value="desert">Pustynny</option>
+          <option value="shadow">Cieniowy</option>
+        </select>
+      </section>
+
+      <section class="menu-actions">
+        <button id="startBtn">▶ Start gry</button>
+        <button id="resumeBtn" disabled>⏵ Wznów</button>
+        <button id="exitBtn">⏹ Wyjdź z gry</button>
+      </section>
+    </aside>
+
+    <main id="gamePanel">
+      <div id="hud">
+        <span id="hudLevel">Poziom: 1</span>
+        <span id="hudApples">Jabłka: 0/10</span>
+        <span id="hudSpeed">Prędkość: 1.0x</span>
+        <span id="hudStatus">Status: gotowy</span>
+      </div>
+      <canvas id="gameCanvas" width="900" height="600"></canvas>
+      <p class="help">Sterowanie: strzałki lub WASD. Pauza: spacja.</p>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
